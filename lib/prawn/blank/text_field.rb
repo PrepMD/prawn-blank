@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
 class Prawn::Blank::TextField < Prawn::Blank::Field
-  # attr_accessor :text_style
+  attr_accessor :text_style
 
-  def finalize(_document)
+  def finalize(document)
     # render this field
 
-    # app = appearance || document.default_appearance
+    app = appearance || document.default_appearance
 
-    # @data[:AP] = {
-    #   N: app.text_field(self, 'ffffcc'),
-    #   R: app.text_field(self, 'ccffff')
-    # }
-    # @data[:AS] = :Off
+    @data[:AP] = {
+      N: app.text_field(self, 'ffffcc'),
+      R: app.text_field(self, 'ccffff')
+    }
+    @data[:AS] = :Off
 
     nil
   end
